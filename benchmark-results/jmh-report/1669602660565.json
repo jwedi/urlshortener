@@ -1,0 +1,51 @@
+[
+    {
+        "jmhVersion" : "1.36",
+        "benchmark" : "com.johanwedin.urlshortener.benchmarks.HashBenchmark.hash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/opt/homebrew/Cellar/openjdk/19.0.1/libexec/openjdk.jdk/Contents/Home/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "19.0.1",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "19.0.1",
+        "warmupIterations" : 1,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 14.359576746440792,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 14.359576746440792,
+                "50.0" : 14.359576746440792,
+                "90.0" : 14.359576746440792,
+                "95.0" : 14.359576746440792,
+                "99.0" : 14.359576746440792,
+                "99.9" : 14.359576746440792,
+                "99.99" : 14.359576746440792,
+                "99.999" : 14.359576746440792,
+                "99.9999" : 14.359576746440792,
+                "100.0" : 14.359576746440792
+            },
+            "scoreUnit" : "ops/us",
+            "rawData" : [
+                [
+                    14.359576746440792
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

@@ -1,0 +1,7 @@
+logging:
+  level: INFO
+  loggers:
+    com.johanwedin.urlshortener: DEBUG
+
+dbHost: "localhost"
+dbPort: 9042
