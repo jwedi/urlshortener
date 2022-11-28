@@ -12,10 +12,6 @@ public class MurmurHashStrategy implements HashStrategy {
     public MurmurHashStrategy() {
     }
 
-    private String addPadding(String original, int padding) {
-        return padding == 0 ? original : original+map[padding];
-    }
-
     private String stringFromHash(int hash) {
         StringBuffer urlId = new StringBuffer();
 
@@ -29,9 +25,8 @@ public class MurmurHashStrategy implements HashStrategy {
     }
     @Override
     public String hash(String original, int padding) {
-        String s = this.addPadding(original, padding);
-        byte[] bytes = s.getBytes(StandardCharsets.UTF_8);
-        int h = MurmurHash3.hash32x86(bytes, 0, bytes.length, SEED)>>>1;
+        byte[] bytes = original.getBytes(StandardCharsets.UTF_8);
+        int h = MurmurHash3.hash32x86(bytes, 0, bytes.length, SEED+padding)>>>1;
         return this.stringFromHash(h);
     }
 }

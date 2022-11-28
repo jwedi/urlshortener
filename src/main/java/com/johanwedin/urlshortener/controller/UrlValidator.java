@@ -8,7 +8,7 @@ import com.johanwedin.urlshortener.models.sentinels.BadRequestException;
 public class UrlValidator {
 
     public static Validator<String> validator = ValidatorBuilder.<String>of()
-            .constraint(String::toString, "url", u -> u.notNull().lessThan(256).greaterThan(2))
+            .constraint(String::toString, "url", u -> u.notNull().notEmpty().notBlank().lessThan(256))
             .build();
 
     public static void validateUrlOrThrow(String candidate, String helpfulParameterName) {

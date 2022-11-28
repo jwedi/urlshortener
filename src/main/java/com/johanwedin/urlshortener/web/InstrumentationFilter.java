@@ -23,7 +23,7 @@ public class InstrumentationFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-            Span span = tracer.spanBuilder("serverInterceptor").setNoParent().startSpan();
+            Span span = tracer.spanBuilder("InstrumentationFilter.serverInterceptor").setNoParent().startSpan();
             try (Scope ss = span.makeCurrent()) {
                 MDC.put("traceId", span.getSpanContext().getTraceId());
                 chain.doFilter(request, response);

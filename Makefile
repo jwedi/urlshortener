@@ -2,7 +2,7 @@
 
 .PHONY: run # Runs the application artifact
 run:
-	java -jar target/urlshortener-1.0.jar server config.yml
+	java -jar -Xms512M -Xmx1G target/urlshortener-1.0.jar server config.yml
 
 .PHONY: build # Builds the application artifact
 build:

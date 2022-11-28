@@ -41,7 +41,7 @@ public class UrlRepositoryWrapper implements UrlRepository {
 
     @Override
     public Optional<UrlMapping> getByUrlId(String urlId) {
-        Span span = tracer.spanBuilder("getByUrlId").startSpan();
+        Span span = tracer.spanBuilder("UrlRepositoryWrapper.getByUrlId").startSpan();
         try {
             return failsafeExecutor.get(() -> urlMappingCache.getUnchecked(urlId));
         } catch (FailsafeException ex) {
@@ -54,7 +54,7 @@ public class UrlRepositoryWrapper implements UrlRepository {
 
     @Override
     public UrlMapping addMapping(UrlMapping newMapping) {
-        Span span = tracer.spanBuilder("addMapping").startSpan();
+        Span span = tracer.spanBuilder("UrlRepositoryWrapper.addMapping").startSpan();
         try {
             return failsafeExecutor.get(() -> delegate.addMapping(newMapping));
         } catch (FailsafeException ex) {
